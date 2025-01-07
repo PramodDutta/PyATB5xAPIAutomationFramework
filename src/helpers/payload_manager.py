@@ -4,6 +4,10 @@
 # Update Booking
 # Auth - Token
 
+from dotenv import load_dotenv
+import os
+
+
 def payload_create_booking():
     payload = {
         "firstname": "Amit",
@@ -35,9 +39,10 @@ def payload_update_booking():
 
 
 def payload_create_token():
+    load_dotenv()
     payload = {
-        "username": "admin",
-        "password": "password123"
+        "username": os.getenv("USERNAME"),
+        "password": os.getenv("PASSWORD")
     }
     return payload
 
